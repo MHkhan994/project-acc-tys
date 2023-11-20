@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Television",
+        "description": "Amage view 55” smart television",
+        "photo": "/productTv.png"
+    },
+    {
+        "name": "Washing Machine",
+        "description": "Your future machine is here",
+        "photo": "/productWm.png"
+    },
+    {
+        "name": "Refrigerator",
+        "description": "Amage view 55” smart television",
+        "photo": "/productR.png"
+    },
+    {
+        "name": "Air Conditioner",
+        "description": "Amage view 55” smart television",
+        "photo": "/productAC.png"
+    },
+    {
+        "name": "Television",
+        "description": "Amage view 55” smart television",
+        "photo": "/productTv2.png"
+    }
+]

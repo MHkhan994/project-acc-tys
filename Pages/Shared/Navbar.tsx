@@ -6,7 +6,6 @@ import React from 'react';
 
 const Navbar = () => {
     const pathname = usePathname()
-    console.log(pathname);
     return (
         <div className='flex justify-between items-center my-container pt-[38px] pb-[48px]'>
             <Image
@@ -16,8 +15,8 @@ const Navbar = () => {
                 width={136}
             />
             <div className='w-[738px] h-[58px] text-[22px] flex justify-center items-center gap-[30px] font-semibold rounded-[200px] border border-[#E4E4E4]'>
-                <Link className={pathname === '/' ? 'text-[#2F7CE3]' : ''} href={'/'}>Home</Link>
-                <Link href={'/'} className={pathname === '/about' ? 'text-[#2F7CE3]' : ''}>About Us</Link>
+                <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Home</Link>
+                <Link href={'/'} className={`${pathname === '/d' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3] transition-all`}>About Us</Link>
                 <Link href={'/'}>Request Service</Link>
                 <Link href={'/'}>Find A Store</Link>
             </div>
