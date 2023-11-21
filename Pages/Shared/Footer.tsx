@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='lg:min-h-[585px] lg:py-[100px] lg:px-[120px] bg-gray my-container rounded-[40px] mt-[130px] mb-[38px] p-[30px]'>
-            <div className='flex items-start gap-[40px] flex-wrap justify-between'>
+            <div className='lg:flex items-start gap-[40px] grid md:grid-cols-2 grid-cols-1 justify-between'>
                 <div>
                     <Image
                         src={'/logo-dark.png'}
@@ -16,7 +16,7 @@ const Footer = () => {
                     <p className='text-lg pt-[30px] lg:w-[386px]'>ACC is a historical company founded in 1968 in the Belluno area, Italy. The company is recognized as one of the leaders in household compressor production. </p>
                 </div>
                 <div>
-                    <h2 className='font-semibold text-[22px] pb-[25px] leading-none'>Product</h2>
+                    <h2 className='primary-p pb-[25px] leading-none'>Product</h2>
                     <span className='space-y-[25px] text-lg'>
                         <p>Air Conditioner</p>
                         <p>Refrigerator</p>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </span>
                 </div>
                 <div>
-                    <h2 className='font-semibold text-[22px] pb-[25px] leading-none'>About us</h2>
+                    <h2 className='primary-p pb-[25px] leading-none'>About us</h2>
                     <span className='space-y-[25px] text-lg'>
                         <p>About Acc</p>
                         <p>Support</p>
@@ -33,7 +33,7 @@ const Footer = () => {
                     </span>
                 </div>
                 <div className='flex flex-col gap-[30px]'>
-                    <h2 className='font-semibold text-[22px] leading-none'>Social Media</h2>
+                    <h2 className='primary-p leading-none'>Social Media</h2>
                     <span className='flex gap-[10px]'>
                         <Image src={'/facebook.png'} height={18} width={18} alt='footer facebook icon' />
                         <Image src={'/instagram.png'} height={18} width={18} alt='footer instagram icon' />

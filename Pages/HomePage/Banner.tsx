@@ -17,7 +17,7 @@ const Banner = () => {
                         clickable: true
                     }}
                     modules={[Pagination]}
-                    className="mySwiper rounded-[50px]"
+                    className="mySwiper banner-swiper rounded-[50px]"
                     autoplay={true}
                 >
                     {
