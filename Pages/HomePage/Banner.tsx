@@ -27,12 +27,13 @@ const Banner = () => {
                                 height={545}
                                 width={1252}
                                 alt='banner image'
+                                className='object-cover w-[1252px] lg:h-[545px] h-[300px]'
                             />
                         </SwiperSlide>)
                     }
                 </Swiper>
             </div>
-            <h1 className='absolute top-[145px] left-[360px] z-20 text-white  text-[64px] text-center font-black leading-[68px]'>WELCOME <br />
+            <h1 className='absolute lg:top-[145px] top-[60px] lg:left-[360px] left-[20%] z-20 text-white lg:text-[64px] text-[42px] text-center font-black lg:leading-[68px] leading-[45px]'>WELCOME <br />
                 TO THE WORLD <br /> OF ACC
             </h1>
 

@@ -7,7 +7,7 @@ import React from 'react';
 const Navbar = () => {
     const pathname = usePathname()
     return (
-        <div className='flex justify-between items-center my-container pt-[38px] pb-[48px]'>
+        <div className={`flex justify-between items-center my-container pt-[38px] pb-[48px] ${pathname?.includes('dashboard') ? 'hidden' : ''}`}>
             <Image
                 src={'/logo-blue.png'}
                 alt='navbar logo'

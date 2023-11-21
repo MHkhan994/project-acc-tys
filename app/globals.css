@@ -23,9 +23,13 @@ body {
 }
 
 .my-container{
-  @apply lg:w-[1252px] md:w-[90vw] w-[95vw] mx-auto
+  @apply lg:w-[1252px] md:w-[90vw] w-[92vw] mx-auto
 }
 
+
+.bg-gray{
+  background-color: #F3F3F6;
+}
 
 
 /* =====banner===== */
@@ -60,4 +64,14 @@ body {
   width: 8.228px;
   border-radius: 50%;
   background-color: white;
+}
+
+@media screen and (max-width:900px) {
+  .swiper-pagination-bullet{
+    margin-bottom: 50px !important;
+  }
+
+  .swiper-pagination-bullet-active{
+    margin-bottom: 42px !important;
+  }
 }
