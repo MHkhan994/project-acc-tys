@@ -5,7 +5,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='my-[130px] lg:min-h-[567px] lg:p-[92px] p-[50px] bg-gray rounded-[40px]'>
+        <div className='my-[130px] lg:min-h-[567px] lg:p-[92px] p-[30px] bg-gray rounded-[40px]'>
             <div className='grid lg:grid-cols-2 gap-[84px] min-h-[383px] lg:w-[1053px] items-center'>
                 <Image
                     src={'/about.png'}

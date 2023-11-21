@@ -22,7 +22,7 @@ const LatestProduct = () => {
             </div>
             <div className='flex flex-wrap gap-[30px] justify-center md:justify-between'>
                 {
-                    products.map((item, i) => <div key={i} className={`${i <= 1 ? 'lg:h-[563px] lg:w-[611px] lg:py-[81px] py-[50px] h-[418px] w-[395px]' : 'h-[418px] w-[395px] py-[50px]'} bg-[#F3F3F6] rounded-[40px] flex items-center flex-col relative`}>
+                    products.map((item, i) => <div key={i} className={`${i <= 1 ? 'lg:h-[563px] lg:w-[611px] lg:py-[81px] py-[50px] h-[418px] w-[395px] md:w-[350px]' : 'h-[418px] w-[395px] lg:w-[395px] md:w-[350px] py-[50px]'} bg-[#F3F3F6] rounded-[40px] flex items-center flex-col relative md:mx-auto`}>
                         <h3 className='font-bold lg:text-[42px] text-[28px] leading-none'>{item.name}</h3>
                         <p className='text-lg py-[12px] font-semibold'>{item.description}</p>
                         <Link href={'/product'} className='text-[#2F7CE3] mb-[30px]'>View Details &#10095;</Link>

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/Pages/Shared/Navbar'
 import { usePathname } from 'next/navigation'
+import Footer from '@/Pages/Shared/Footer'
 
 export const metadata: Metadata = {
   title: 'ACC - Home',
@@ -16,6 +17,7 @@ const RootLayout = ({ children, }: { children: React.ReactNode }) => {
       <body>
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   )
