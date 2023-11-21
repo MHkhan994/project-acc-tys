@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Pagination, EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import * as style from './product.module.css'
+import './product.css'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -21,10 +21,10 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
     return (
         <div className='mt-[100px]'>
             <h1 className='primary-title pb-[50px]'>Details more</h1>
-            <div className='space-x-[71px] border-b-4 relative border-[#c7dffd]'>
+            <div className='flex flex-wrap md:gap-[71px] justify-center md:justify-normal gap-[20px] md:border-b-4 relative border-[#c7dffd]'>
                 {
                     detailsTabs.map(item => <button
-                        className={`primary-p relative capitalize mb-[-4px] ${currentTab === item ? 'text-[#2F7CE3] border-b-4 border-[#2F7CE3]' : ''} pb-[10px]`}
+                        className={`md:text-[22px] font-semibold text-[16px] relative capitalize mb-[-4px] ${currentTab === item ? 'text-[#2F7CE3] border-b-4 border-[#2F7CE3]' : 'border-[#c7dffd]'} pb-[10px] border md:border-t-0 md:border-x-0 border-b-4 p-2`}
                         key={item}
                         onClick={() => setCurrentTab(item)}
                     >
@@ -53,17 +53,17 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
                         coverflowEffect={{
                             rotate: 0,
                             stretch: 0,
-                            depth: 40,
+                            depth: 100,
                             modifier: 1,
                             slideShadows: false
                         }}
                         breakpoints={{
                             320: {
-                                spaceBetween: 20,
+                                spaceBetween: 0,
                             },
                             // When window width is >= 640px
-                            640: {
-                                spaceBetween: 50,
+                            740: {
+                                spaceBetween: 10,
                             },
                             // When window width is >= 992px
                             992: {
@@ -72,7 +72,7 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
                         }}
                         modules={[Pagination, EffectCoverflow]}
                         style={{ height: 'auto' }}
-                        className={`mySwiper mt-[30px] product-swiper h-full rounded-[50px] ${style}`}
+                        className={`mySwiper mt-[30px] product-swiper h-full rounded-[50px]`}
                     >
                         {
                             product?.picture_gallery?.map(photo => <SwiperSlide className='img-slider rounded-[40px]' key={photo}>

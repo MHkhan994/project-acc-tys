@@ -15,7 +15,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
     return (
         <div className='my-container lg:pt-[33px] pt-[10px]'>
             <div className='grid lg:grid-cols-2 gap-[50px]'>
-                <div className='lg:h-[563px] h-[340px] mx-auto lg:w-[611px] w-[330px] rounded-[40px] lg:p-[81px] p-[30px] bg-gray flex justify-center items-center'>
+                <div className='lg:h-[563px] h-[350px] mx-auto lg:w-[611px] w-full rounded-[40px] lg:p-[81px] p-[30px] bg-gray flex justify-center items-center'>
                     <Image
                         src={product?.photo ? product.photo : ''}
                         alt={product?.name ? product.name : ''}
@@ -40,7 +40,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                     </span>
                     <h2 className='text-[#2F7CE3] primary-title'>${product?.price}</h2>
 
-                    <div className='pt-[40px] flex flex-wrap gap-[30px] lg:justify-normal justify-between'>
+                    <div className='pt-[40px] flex flex-wrap lg:gap-[30px] gap-[20px] md:justify-normal justify-around'>
                         <div className='rounded-[15px] lg:h-[117px] lg:w-[177px] h-[100px] w-[150px] border border-[#E4E4E4] flex flex-col gap-[10px] justify-center items-center'>
                             <span className='h-[37px] w-[37px] rounded-full bg-[#557597]'></span>
                             <p className='primary-p'>blue</p>
