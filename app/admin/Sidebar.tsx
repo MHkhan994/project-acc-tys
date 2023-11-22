@@ -10,7 +10,7 @@ const Sidebar = () => {
     console.log(pathName);
 
     return (
-        <div className='w-[362px] bg-gray h-[982px] py-[56px] ps-[71px] pe-[32px] hidden lg:block'>
+        <div className='w-[362px] bg-gray h-[982px] py-[56px] ps-[71px] pe-[32px] hidden md:hidden lg:block'>
             <Image
                 src={'/logo-blue.png'}
                 alt='dashboard logo'

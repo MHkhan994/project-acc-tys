@@ -1,5 +1,6 @@
 import PrimaryButton from '@/components/PrimaryButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const HeroImage = () => {
@@ -7,10 +8,9 @@ const HeroImage = () => {
         <div className='h-[337px] w-full bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px]'>
             <span className='flex justify-between items-center'>
                 <h1 className='text-[36px] font-bold'>Hero Image</h1>
-                <PrimaryButton
-                    buttonStyle='bg-[#2F7CE3] text-white capitalize h-[50px] w-[146px] rounded-[10px]'
-                    text='add new'
-                />
+                <button className='bg-[#2F7CE3] text-white capitalize font-semibold text-[20px] h-[50px] w-[146px] rounded-[10px]'>
+                    <Link href={'/admin/add-hero'}>Add New</Link>
+                </button>
             </span>
             <div className="overflow-x-auto mt-[50px]">
                 <table className="table">

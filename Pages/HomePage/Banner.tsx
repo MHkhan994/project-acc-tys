@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -9,6 +9,17 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 
 const Banner = () => {
+
+    const [imageURL, setImageURL] = useState<string | null>(null)
+
+    useEffect(() => {
+        const storedImageUrl = localStorage.getItem('Image_Url');
+        if (storedImageUrl) {
+            setImageURL(storedImageUrl);
+        }
+    }, []);
+
+
     return (
         <header className='relative'>
             <div className="swiper-wrapper">
@@ -23,7 +34,7 @@ const Banner = () => {
                     {
                         Array.from({ length: 4 }, (item, i) => <SwiperSlide key={i}>
                             <Image
-                                src={'/header.png'}
+                                src={imageURL || '/header.png'}
                                 height={545}
                                 width={1252}
                                 alt='banner image'
