@@ -3,6 +3,7 @@ import PrimaryButton from '@/components/PrimaryButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const HeroImage = () => {
 
@@ -14,6 +15,29 @@ const HeroImage = () => {
             setImageURL(storedImageUrl);
         }
     }, []);
+
+    const handleDeleteHero = () => {
+        Swal.fire({
+            title: "Delete hero image",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem('Image_Url')
+                setImageURL(null)
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "hero image has be deleted",
+                    icon: "success"
+                });
+            }
+        });
+
+    }
 
     return (
         <div className='h-[337px] w-full bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px]'>
@@ -56,7 +80,7 @@ const HeroImage = () => {
                                             <path d="M23.75 19.6292V23.3792C23.75 24.0422 23.4866 24.6781 23.0178 25.1469C22.5489 25.6158 21.913 25.8792 21.25 25.8792H7.5C6.83696 25.8792 6.20107 25.6158 5.73223 25.1469C5.26339 24.6781 5 24.0422 5 23.3792V9.62915C5 8.96611 5.26339 8.33022 5.73223 7.86138C6.20107 7.39254 6.83696 7.12915 7.5 7.12915H11.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
-                                    <button>
+                                    <button onClick={handleDeleteHero}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
                                             <path d="M8.75 27.1292C8.0625 27.1292 7.47375 26.8842 6.98375 26.3942C6.49375 25.9042 6.24917 25.3158 6.25 24.6292V8.37915H5V5.87915H11.25V4.62915H18.75V5.87915H25V8.37915H23.75V24.6292C23.75 25.3167 23.505 25.9054 23.015 26.3954C22.525 26.8854 21.9367 27.13 21.25 27.1292H8.75ZM21.25 8.37915H8.75V24.6292H21.25V8.37915ZM11.25 22.1292H13.75V10.8792H11.25V22.1292ZM16.25 22.1292H18.75V10.8792H16.25V22.1292Z" fill="black" />
                                         </svg>

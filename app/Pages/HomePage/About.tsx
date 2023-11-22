@@ -18,7 +18,7 @@ const About = () => {
                     <h1 className='primary-title'>About Us</h1>
                     <p className='text-[22px]'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                     <button type='button' className='text-[20px] font-semibold bg-[#2F7CE3] w-[177px] h-[62px] text-white rounded-[100px]'>
-                        <Link href={'/about'}>Read more</Link>
+                        <Link href={'/'}>Read more</Link>
                     </button>
                 </div>
             </div>
