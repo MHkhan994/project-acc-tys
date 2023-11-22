@@ -2,6 +2,7 @@
 import React from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 import AddImage from './AddImage';
+import ProductDescription from './ProductDescription';
 
 type FormValues = {
     name: string;
@@ -64,6 +65,7 @@ const AddProduct = () => {
             </div>
 
             <AddImage />
+            <ProductDescription />
             <div className='justify-end flex mt-[32px] gap-[20px]'>
                 <button type='submit' form='product-form' className='p-[18px] leading-none bg-[#BD2626] rounded-[10px] text-white font-semibold text-[20px]'>
                     Save & Exit
