@@ -9,8 +9,4 @@ export type Product = {
         total: number;
     };
     price: number;
-    feature?: string;
-    technical_specification?: string;
-    picture_gallery?: string[];
-    supports: string
 }

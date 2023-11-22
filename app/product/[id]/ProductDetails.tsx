@@ -16,7 +16,7 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
     const detailsTabs: DetailsTab[] = ["feature", "technical_specification", "picture_gallery", "supports"]
     const [currentTab, setCurrentTab] = useState<DetailsTab>('feature')
 
-    console.log(product);
+    const gallery: string[] = ['/productAC.png', '/productR.png', '/productTv.png', '/productTv2.png', '/productWm.png']
 
     return (
         <div className='mt-[100px]'>
@@ -34,7 +34,11 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
             </div>
             <div>
                 {
-                    currentTab !== 'picture_gallery' && <p className='primary-p pt-[30px]'>{product?.[currentTab]}</p>
+                    currentTab !== 'picture_gallery' && <>
+                        <p className='primary-p pt-[30px]'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p className='primary-p pt-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <p className='primary-p pt-[30px]'>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    </>
                 }
                 {
                     currentTab === 'picture_gallery' && <Swiper
@@ -75,7 +79,7 @@ const ProductDetails = ({ product }: { product: Product | undefined }) => {
                         className={`mySwiper mt-[30px] product-swiper h-full rounded-[50px]`}
                     >
                         {
-                            product?.picture_gallery?.map(photo => <SwiperSlide className='img-slider rounded-[40px]' key={photo}>
+                            gallery?.map(photo => <SwiperSlide className='img-slider rounded-[40px]' key={photo}>
                                 <div className='h-[463px] lg:w-[411px] w-[340px] rounded-[40px] lg:p-[81px] p-[30px] bg-gray flex justify-center items-center'>
                                     <Image
                                         src={photo}
