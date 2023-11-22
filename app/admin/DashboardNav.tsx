@@ -39,12 +39,15 @@ const DashboardNav = () => {
                             <button className='text-2xl ms-auto' onClick={handleDrawer}>
                                 <IoCloseSharp />
                             </button>
-                            <Image
-                                src={'/logo-blue.png'}
-                                alt='dashboard logo'
-                                height={55}
-                                width={129}
-                            />
+                            <div onClick={() => router.push('/')}>
+                                <Image
+                                    src={'/logo-blue.png'}
+                                    alt='dashboard logo'
+                                    height={55}
+                                    width={129}
+                                    className='cursor-pointer'
+                                />
+                            </div>
                             <SidebarButtons />
                         </ul>
                     </div>

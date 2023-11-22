@@ -2,12 +2,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
     const pathname = usePathname()
+    const router = useRouter()
 
     const openDrawer = () => {
         const drawerCheckbox = document.getElementById('my-drawer-4') as HTMLInputElement | null;
@@ -20,12 +22,15 @@ const Navbar = () => {
     return (
         <div className={`${pathname?.includes('admin') ? 'hidden' : ''}`}>
             <div className={`lg:flex hidden justify-between items-center my-container pt-[38px] pb-[48px]`}>
-                <Image
-                    src={'/logo-blue.png'}
-                    alt='navbar logo'
-                    height={58}
-                    width={136}
-                />
+                <div onClick={() => router.push('/')}>
+                    <Image
+                        src={'/logo-blue.png'}
+                        alt='navbar logo'
+                        height={58}
+                        width={136}
+                        className='cursor-pointer'
+                    />
+                </div>
                 <div className='w-[738px] h-[58px] text-[22px] flex justify-center items-center gap-[30px] font-semibold rounded-[200px] border border-[#E4E4E4]'>
                     <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Home</Link>
                     <Link href={'/'} className={`${pathname === '/d' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3] transition-all`}>About Us</Link>
@@ -48,12 +53,15 @@ const Navbar = () => {
 
             {/* =========mobile-nav======== */}
             <div className='flex lg:hidden justify-between my-container py-2 mb-[20px]'>
-                <Image
-                    src={'/logo-blue.png'}
-                    alt='navbar logo'
-                    height={28}
-                    width={100}
-                />
+                <div onClick={() => router.push('/')}>
+                    <Image
+                        src={'/logo-blue.png'}
+                        alt='navbar logo'
+                        height={28}
+                        width={100}
+                        className='cursor-pointer'
+                    />
+                </div>
                 <button className='text-2xl' onClick={openDrawer}>
                     <FaBarsStaggered />
                 </button>
