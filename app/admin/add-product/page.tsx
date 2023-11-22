@@ -1,9 +1,7 @@
 'use client'
-import Image from 'next/image';
 import React from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 import AddImage from './AddImage';
-import { json } from 'stream/consumers';
 
 type FormValues = {
     name: string;
@@ -20,8 +18,10 @@ const AddProduct = () => {
         const { name, description, price } = data
         const prevProductsJson = localStorage.getItem('products');
 
+        const id = Math.random() * 1000000
+
         let prevProducts = prevProductsJson ? JSON.parse(prevProductsJson) : []
-        const products = [...prevProducts, { name, description, price }]
+        const products = [...prevProducts, { id, name, description, price, photo: "https://i.ibb.co/RcXVJns/product-Tv.png" }]
 
         localStorage.setItem('products', JSON.stringify(products))
         reset()
@@ -29,7 +29,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <div className='min-h-[337px] w-full bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px] mt-[30px]'>
+            <div className='min-h-[337px] w-full bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px]'>
                 <h1 className='text-[36px] font-bold leading-none pb-[25px] border-b-2 border-black'>Product is</h1>
                 <form id="product-form" onSubmit={handleSubmit(onSubmit)} className='pt-[35px] grid md:grid-cols-2 grid-cols-1 justify-start gap-[20px]'>
                     {/* =======product name======= */}

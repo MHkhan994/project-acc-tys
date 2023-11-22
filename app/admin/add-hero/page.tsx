@@ -70,9 +70,9 @@ const AddHero = () => {
 
     return (
         <div>
-            <div className='mt-[30px] min-h-[274px] bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px]'>
+            <div className='min-h-[274px] bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px]'>
                 <h1 className='text-[36px] font-bold leading-none'>Add Image</h1>
-                <p className='text-[20px] pb-[25px] pt-[6px] border-b-2 border-black'>Share your product image. Image should be PNG and maximum size 1 Mb</p>
+                <p className='text-[20px] pb-[25px] pt-[6px] border-b-2 border-gray-400'>Share your product image. Image should be PNG and maximum size 1 Mb</p>
                 <form id="hero-form" onSubmit={handleSubmit(onSubmit)} className='pt-[35px] flex flex-col md:flex-row gap-[20px]'>
                     <div className="form-control">
                         <input

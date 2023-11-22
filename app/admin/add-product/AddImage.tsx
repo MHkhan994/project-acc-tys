@@ -8,7 +8,7 @@ const AddImage = () => {
         <div className='min-h-[361px] flex justify-between flex-col-reverse items-center lg:flex-row gap-[64px] w-full bg-gray rounded-[40px] lg:px-[38px] px-[20px] lg:py-[45px] py-[25px] mt-[30px]'>
             <div className='flex-grow'>
                 <h1 className='text-[36px] font-bold leading-none'>Add Image</h1>
-                <p className='text-[20px] pb-[25px] leading-normal pt-[10px] border-b-2 border-black'>Share your product image. Image should be PNG and <br /> maximum size 1 Mb</p>
+                <p className='text-[20px] pb-[25px] leading-normal pt-[10px] border-b-2 border-gray-400'>Share your product image. Image should be PNG and <br /> maximum size 1 Mb</p>
                 <div className='flex justify-between items-center'>
                     <div className='h-[125px] w-[125px] mt-[30px] bg-white rounded-[10px] flex justify-center items-center'>
                         <Image

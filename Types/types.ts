@@ -3,8 +3,8 @@ export type Product = {
     name: string;
     description: string;
     photo: string;
-    details: string;
-    ratings: {
+    details?: string;
+    ratings?: {
         average: number;
         total: number;
     };
