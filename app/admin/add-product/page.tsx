@@ -3,6 +3,7 @@ import React from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 import AddImage from './AddImage';
 import ProductDescription from './ProductDescription';
+import Swal from 'sweetalert2';
 
 type FormValues = {
     name: string;
@@ -16,16 +17,32 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm<FormValues>()
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        const { name, description, price } = data
-        const prevProductsJson = localStorage.getItem('products');
+        Swal.fire({
+            title: `Add product ${data.name}?`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, add"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const { name, description, price } = data
+                const prevProductsJson = localStorage.getItem('products');
 
-        const id = Math.random() * 1000000
+                const id = Math.random() * 1000000
 
-        let prevProducts = prevProductsJson ? JSON.parse(prevProductsJson) : []
-        const products = [...prevProducts, { id, name, description, price, photo: "https://i.ibb.co/RcXVJns/product-Tv.png" }]
+                let prevProducts = prevProductsJson ? JSON.parse(prevProductsJson) : []
+                const products = [...prevProducts, { id, name, description, price, photo: "https://i.ibb.co/RcXVJns/product-Tv.png" }]
 
-        localStorage.setItem('products', JSON.stringify(products))
-        reset()
+                localStorage.setItem('products', JSON.stringify(products))
+                reset()
+                Swal.fire({
+                    title: "Success!",
+                    text: "Product has been added",
+                    icon: "success"
+                });
+            }
+        });
     }
 
     return (

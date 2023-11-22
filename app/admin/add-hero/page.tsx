@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import Swal from 'sweetalert2';
 
 type FormValues = {
     photo: FileList
@@ -19,31 +20,63 @@ type FormValues = {
 const AddHero = () => {
     const [photoFile, setPhotoFile] = useState<File[] | []>([])
 
-    const { register, handleSubmit } = useForm<FormValues>()
+    const { register, handleSubmit, reset } = useForm<FormValues>()
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        const heroTitle = data.text
-        const words = heroTitle.trim().split(/\s+/);
-        if (photoFile.length !== 0) {
-            if (photoFile[0].size / 1024 > 1024) {
-                alert('image size is more than 1 MB')
-            }
-            else {
-                const reader = new FileReader()
-                reader.readAsDataURL(photoFile[0])
-                reader.onload = () => {
-                    console.log(reader.result);
-                    localStorage.setItem('Image_Url', reader.result as string)
+        Swal.fire({
+            title: `Save changes?`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes save!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const heroTitle = data.text
+                const words = heroTitle.trim().split(/\s+/);
+                if (photoFile.length !== 0) {
+                    if (photoFile[0].size / 1024 > 1024) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "image size can't be more that 1 MB",
+                        });
+                    }
+                    else {
+                        const reader = new FileReader()
+                        reader.readAsDataURL(photoFile[0])
+                        reader.onload = () => {
+                            console.log(reader.result);
+                            localStorage.setItem('Image_Url', reader.result as string)
+                            Swal.fire({
+                                title: "Success!",
+                                text: "Hero image added successfully",
+                                icon: "success"
+                            });
+                            reset()
+                            setPhotoFile([])
+                        }
+                    }
+                }
+                if (words.length >= 8) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "title can't be more than 8 words",
+                    });
+                }
+                else if (words.length === 0) {
+                    localStorage.setItem("Hero_title", heroTitle)
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Hero image added successfully",
+                        icon: "success"
+                    });
+                    reset()
+                    setPhotoFile([])
                 }
             }
-        }
-        if (words.length >= 8) {
-            alert('title is more than 8 words')
-            return
-        }
-        else if (words.length === 0) {
-            localStorage.setItem("Hero_title", heroTitle)
-        }
+        });
     }
 
     const photoRef = useRef<HTMLInputElement>(null);
