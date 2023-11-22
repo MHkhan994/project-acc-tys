@@ -46,7 +46,7 @@ const Sidebar = () => {
                     height={24}
                     width={24}
                 />
-                <Link href={'/admin'} className='primary-p capitalize'>Add Product</Link>
+                <Link href={'/admin/add-product'} className='primary-p capitalize'>Add Product</Link>
             </button>
         </div>
     );

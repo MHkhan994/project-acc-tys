@@ -23,6 +23,7 @@ const AddHero = () => {
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         const heroTitle = data.text
+        const words = heroTitle.trim().split(/\s+/);
         if (photoFile.length !== 0) {
             if (photoFile[0].size / 1024 > 1024) {
                 alert('image size is more than 1 MB')
@@ -35,6 +36,13 @@ const AddHero = () => {
                     localStorage.setItem('Image_Url', reader.result as string)
                 }
             }
+        }
+        if (words.length >= 8) {
+            alert('title is more than 8 words')
+            return
+        }
+        else if (words.length === 0) {
+            localStorage.setItem("Hero_title", heroTitle)
         }
     }
 
@@ -91,7 +99,7 @@ const AddHero = () => {
                         <label className="label absolute bg-gray -top-[14px] left-[27px]">
                             <span className="label-text leading-none">Head Text (Maximum 8 words)</span>
                         </label>
-                        <input {...register('text')} type="text" placeholder="Write your text" className="outline-none bg-gray border border-black p-[22px] rounded-[10px] lg:w-[416px] w-[330px] h-[57px]" />
+                        <input {...register('text')} type="text" placeholder="Write your text" className="outline-none bg-gray border border-black p-[22px] rounded-[10px] lg:w-[416px] w-full h-[57px]" />
                     </div>
                 </form>
                 {/* ============banner hero preview=============== */}

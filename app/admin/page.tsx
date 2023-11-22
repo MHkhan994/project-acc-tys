@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import HeroImage from './HeroImage';
 import ProductList from './ProductList';
