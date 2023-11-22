@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useState } from 'react'
-import products from '../../product.json'
+import products from '../../../product.json'
 import Image from 'next/image';
 import Link from 'next/link';
 

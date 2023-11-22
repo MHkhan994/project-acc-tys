@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/Pages/Shared/Navbar'
+import Navbar from '@/app/Pages/Shared/Navbar'
 import { usePathname } from 'next/navigation'
-import Footer from '@/Pages/Shared/Footer'
+import Footer from '@/app/Pages/Shared/Footer'
 
 export const metadata: Metadata = {
   title: 'ACC - Home',
