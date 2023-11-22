@@ -6,6 +6,7 @@ import React from 'react';
 import { FaBars } from "react-icons/fa6";
 import Sidebar from './Sidebar';
 import SidebarButtons from './SidebarButtons';
+import { IoCloseSharp } from 'react-icons/io5';
 
 const DashboardNav = () => {
     const pathName = usePathname()
@@ -35,6 +36,9 @@ const DashboardNav = () => {
                     <div className="drawer-side">
                         <label htmlFor="dashboard-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                         <ul className="menu p-4 pt-[30px] w-[360px] min-h-full bg-[#F3F3F6] text-base-content">
+                            <button className='text-2xl ms-auto' onClick={handleDrawer}>
+                                <IoCloseSharp />
+                            </button>
                             <Image
                                 src={'/logo-blue.png'}
                                 alt='dashboard logo'

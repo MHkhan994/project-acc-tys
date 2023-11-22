@@ -65,7 +65,7 @@ const Navbar = () => {
                 </div>
                 <div className="drawer-side z-40">
                     <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-60 md:w-72 gap-3 min-h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-60 md:w-80 gap-3 min-h-full bg-base-200 text-base-content">
                         <button className='text-2xl ms-auto' onClick={openDrawer}>
                             <IoCloseSharp />
                         </button>
@@ -77,16 +77,18 @@ const Navbar = () => {
                                     height={38}
                                     width={30}
                                 />
-                                <span className='text-sm font-semibold'>
+                                <span className='text-base font-semibold'>
                                     <p>ACC InstaHome</p>
                                     <p>Download App Now</p>
                                 </span>
                             </div>
                         </div>
-                        <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Home</Link>
-                        <Link href={'/'} className={`${pathname === '/d' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3] transition-all`}>About Us</Link>
-                        <Link href={'/'}>Request Service</Link>
-                        <Link href={'/'}>Find A Store</Link>
+                        <div className='text-xl space-y-[20px]'>
+                            <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Home</Link>
+                            <Link href={'/'} className={`${pathname === '/d' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3] transition-all`}>About Us</Link>
+                            <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Request Service</Link>
+                            <Link className={`${pathname === '/' ? 'text-[#2F7CE3]' : ''} hover:text-[#2F7CE3]`} href={'/'}>Find A Store</Link>
+                        </div>
                     </ul>
                 </div>
             </div>
